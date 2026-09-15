@@ -1,121 +1,126 @@
-# 🚀 [Your Project Title Here]
+# ⚡ GridGuard AI
 
-> ⚠️ **Replace everything in `[ ]` brackets with your actual content before submission.**
+> ### AI-Powered Predictive Maintenance & Power Outage Risk Advisor
+
+GridGuard AI is an intelligent grid monitoring and decision-support platform designed to help power-grid operators predict equipment failures, identify high-risk assets, assess potential outage impact, and take preventive maintenance actions before failures occur.
+
+The platform combines equipment telemetry, asset health information, weather conditions, historical maintenance/incidents, and machine-learning-based risk analysis to provide an actionable view of grid reliability.
 
 ---
 
 ## 👥 Team
 
-| Field | Value |
+| Field | Details |
 |---|---|
-| **Team Name** | [Your Team Name] |
-| **Track** | [AI / DevOps / Sustainability / Open] |
-| **Team Lead** | [Name] — [email@ibm.com] |
-| **Members** | [Name 1], [Name 2], [Name 3] |
+| **Team Name** | CodeCraft |
+| **Track** | AI |
+| **Project** | GridGuard AI |
+| **Problem Statement** | U1 — Power Outage Prediction & Grid Equipment Failure Advisor |
+| **Team Lead** | Parth Yadav |
+| **Team Members** | Mahi Vachhani, Unnati Solanki, Manav Rabadiya |
 
 ---
 
-## 🎯 Problem Statement
+# 🎯 Problem Statement
 
-> In 2–3 sentences: What problem does your project solve? Who experiences this problem?
+Power-grid operators manage a large number of critical assets such as transformers, substations, and other electrical equipment. Equipment failures can occur due to abnormal operating conditions, environmental factors, aging, or inadequate maintenance.
 
-[Describe the real-world problem your project addresses. Be specific about who the user is and what pain point they face.]
+Traditional maintenance approaches can make it difficult to identify which assets require immediate attention and which areas are most likely to experience outages.
 
----
-
-## 💡 Solution
-
-> In 2–3 sentences: What did you build? How does it solve the problem above?
-
-[Describe your solution clearly. Explain the core mechanism — what makes it work.]
+**GridGuard AI addresses this challenge by combining equipment telemetry, asset health, weather conditions, and historical information to predict equipment failure risk and prioritize preventive actions.**
 
 ---
 
-## ✨ Key Features
+# 💡 Our Solution
 
-- **Feature 1:** [Brief description — e.g., "Real-time anomaly detection using watsonx.ai"]
-- **Feature 2:** [Brief description]
-- **Feature 3:** [Brief description]
-- **Feature 4:** [Optional]
-- **Feature 5:** [Optional]
+GridGuard AI is an AI-powered decision-support system that evaluates the current and historical condition of grid assets and produces an understandable risk assessment.
 
----
+The system:
 
-## 🛠️ Tech Stack
+1. Collects asset telemetry and operational data.
+2. Processes sensor and environmental information.
+3. Uses machine-learning models to identify abnormal conditions and estimate failure risk.
+4. Combines asset risk with potential grid impact.
+5. Prioritizes assets that require attention.
+6. Provides maintenance recommendations.
+7. Uses IBM watsonx.ai to generate human-readable explanations and assist operators in understanding the predictions.
 
-| Category | Technologies |
-|---|---|
-| **Languages** | [e.g., Python, TypeScript] |
-| **Frameworks** | [e.g., FastAPI, React] |
-| **IBM Technologies** | [e.g., watsonx.ai, IBM Bob, IBM Cloud] |
-| **Databases** | [e.g., PostgreSQL, Redis] |
-| **Other** | [e.g., Docker, GitHub Actions] |
+The goal is to move from **reactive maintenance** toward **predictive and risk-based maintenance**.
 
 ---
 
-## 📁 Repository Structure
+# 🧠 How GridGuard AI Works
 
-```
-├── src/                  # All source code
-├── docs/                 # Written documentation
-│   ├── problem-statement.md
-│   ├── solution-overview.md
-│   ├── architecture.md
-│   └── setup-guide.md
-├── demo/                 # Demo artifacts
-│   ├── screenshots/      # App screenshots
-│   └── demo-video-link.txt  # Link to demo video
-├── presentation/         # Slide deck
-└── submission.yaml       # Structured submission metadata
-```
-
----
-
-## ⚡ How to Run
-
-> **Copy these exact steps from your [`docs/setup-guide.md`](docs/setup-guide.md)**
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/[your-repo].git
-cd [your-repo]
-
-# 2. Install dependencies
-[your install command here]
-
-# 3. Configure environment
-cp .env.example .env
-# Edit .env with your values
-
-# 4. Run the project
-[your run command here]
-```
-
----
-
-## 🖥️ Demo
-
-| Artifact | Link |
-|---|---|
-| 📹 Demo Video | [See demo/demo-video-link.txt](demo/demo-video-link.txt) |
-| 🌐 Live Demo | [See demo/live-demo-url.txt](demo/live-demo-url.txt) |
-| 🖼️ Screenshots | [See demo/screenshots/](demo/screenshots/) |
-| 📊 Presentation | [See presentation/slides.pdf](presentation/) |
-
----
-
-## ⚠️ Known Limitations
-
-> Be honest — judges appreciate transparency over overclaiming.
-
-- [Limitation 1: e.g., "Authentication is mocked — not production-ready"]
-- [Limitation 2: e.g., "Only tested on Chrome"]
-- [Limitation 3: e.g., "Feature X is scaffolded but not fully implemented"]
-
----
-
-## 🏅 What We're Most Proud Of
-
-[Tell the judges what part of your submission is strongest and worth paying close attention to.]
-
----
+```text
+┌──────────────────────────────┐
+│        Data Sources          │
+│                              │
+│ • Asset Telemetry            │
+│ • Equipment Health           │
+│ • Weather Data               │
+│ • Maintenance History        │
+│ • Incident History           │
+│ • Asset Information          │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ Data Processing &            │
+│ Feature Engineering          │
+│                              │
+│ • Data Cleaning              │
+│ • Normalization              │
+│ • Feature Generation         │
+│ • Anomaly Identification     │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│      AI / ML Engine          │
+│                              │
+│ • Failure Prediction         │
+│ • Risk Prediction            │
+│ • Anomaly Detection          │
+│ • Asset Health Analysis      │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│    Grid Impact Analysis      │
+│                              │
+│ • Potential Outage Impact    │
+│ • Asset Criticality          │
+│ • Area Risk                  │
+│ • Priority Assessment        │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ Decision & Recommendation    │
+│ Engine                       │
+│                              │
+│ • Maintenance Priority       │
+│ • Risk Ranking               │
+│ • Crew Pre-positioning       │
+│ • Preventive Actions         │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│      IBM watsonx.ai          │
+│                              │
+│ • AI Explanation             │
+│ • Operator Assistance        │
+│ • Natural Language Insights  │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│      GridGuard Dashboard     │
+│                              │
+│ • Risk Overview              │
+│ • Asset Ranking              │
+│ • Predictions                │
+│ • Recommendations            │
+│ • AI Insights                │
+└──────────────────────────────┘
