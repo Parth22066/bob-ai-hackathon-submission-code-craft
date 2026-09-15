@@ -1,0 +1,234 @@
+{
+  "dataset_name": "GridGuard AI Predictive Maintenance & Risk Advisor Dataset",
+  "generated_timestamp": "2026-09-15T19:40:00",
+  "random_seed": 42,
+  "total_records": 54060,
+  "total_assets": 60,
+  "time_range": {
+    "start": "2026-04-18T00:00:00",
+    "end": "2026-09-15T00:00:00",
+    "sampling_interval_hours": 4
+  },
+  "target_summary": {
+    "target_variable": "failure_within_horizon",
+    "horizon_hours": 168,
+    "total_positive_failures": 398,
+    "total_negative_normal": 53662,
+    "positive_rate_pct": 0.74
+  },
+  "missing_values": {
+    "sensor_temperature": 209,
+    "sensor_vibration": 201,
+    "sensor_partial_discharge": 231,
+    "sensor_oil_quality": 197,
+    "sensor_asset_health": 209
+  },
+  "feature_correlations_with_target": {
+    "criticality": -0.0102,
+    "age": 0.0224,
+    "capacity_load_importance": 0.0218,
+    "sensor_temperature": 0.1625,
+    "sensor_vibration": 0.0805,
+    "sensor_partial_discharge": 0.1774,
+    "sensor_oil_quality": -0.0166,
+    "sensor_asset_health": -0.6058,
+    "weather_temperature": 0.0203,
+    "weather_rainfall": 0.0005,
+    "weather_wind_speed": 0.0003,
+    "weather_humidity": 0.0005,
+    "weather_storm_risk": -0.0001,
+    "historical_previous_failures": 0.0416,
+    "historical_outage_history": 0.0473,
+    "historical_maintenance_count": 0.038,
+    "historical_days_since_maintenance": 0.2117
+  },
+  "numerical_summary": {
+    "criticality": {
+      "mean": 2.433,
+      "std": 0.901,
+      "min": 1.0,
+      "q25": 2.0,
+      "median": 2.0,
+      "q75": 3.0,
+      "max": 4.0,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    },
+    "age": {
+      "mean": 12.153,
+      "std": 6.762,
+      "min": 4.1,
+      "q25": 6.85,
+      "median": 10.8,
+      "q75": 14.975,
+      "max": 35.0,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    },
+    "capacity_load_importance": {
+      "mean": 46.583,
+      "std": 34.683,
+      "min": 10.0,
+      "q25": 20.0,
+      "median": 30.0,
+      "q75": 65.0,
+      "max": 120.0,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    },
+    "sensor_temperature": {
+      "mean": 46.424,
+      "std": 8.469,
+      "min": -15.0,
+      "q25": 40.87,
+      "median": 45.6,
+      "q75": 51.14,
+      "max": 148.0,
+      "missing_count": 209,
+      "missing_pct": 0.39
+    },
+    "sensor_vibration": {
+      "mean": 2.104,
+      "std": 2.691,
+      "min": 0.756,
+      "q25": 1.668,
+      "median": 1.974,
+      "q75": 2.255,
+      "max": 79.839,
+      "missing_count": 201,
+      "missing_pct": 0.37
+    },
+    "sensor_partial_discharge": {
+      "mean": 27.25,
+      "std": 58.398,
+      "min": 5.0,
+      "q25": 17.9,
+      "median": 22.9,
+      "q75": 28.2,
+      "max": 1780.9,
+      "missing_count": 231,
+      "missing_pct": 0.43
+    },
+    "sensor_oil_quality": {
+      "mean": 92.32,
+      "std": 3.877,
+      "min": 75.3,
+      "q25": 90.1,
+      "median": 92.2,
+      "q75": 95.4,
+      "max": 102.1,
+      "missing_count": 197,
+      "missing_pct": 0.36
+    },
+    "sensor_asset_health": {
+      "mean": 99.0,
+      "std": 3.498,
+      "min": 10.0,
+      "q25": 98.8,
+      "median": 99.9,
+      "q75": 100.0,
+      "max": 100.0,
+      "missing_count": 209,
+      "missing_pct": 0.39
+    },
+    "weather_temperature": {
+      "mean": 28.116,
+      "std": 4.513,
+      "min": 17.14,
+      "q25": 24.53,
+      "median": 28.13,
+      "q75": 31.6,
+      "max": 40.45,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    },
+    "weather_rainfall": {
+      "mean": 0.629,
+      "std": 4.673,
+      "min": 0.0,
+      "q25": 0.0,
+      "median": 0.0,
+      "q75": 0.0,
+      "max": 86.55,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    },
+    "weather_wind_speed": {
+      "mean": 17.307,
+      "std": 9.918,
+      "min": 6.0,
+      "q25": 11.12,
+      "median": 16.43,
+      "q75": 21.63,
+      "max": 87.7,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    },
+    "weather_humidity": {
+      "mean": 58.006,
+      "std": 9.995,
+      "min": 42.0,
+      "q25": 50.0,
+      "median": 57.8,
+      "q75": 64.8,
+      "max": 98.8,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    },
+    "weather_storm_risk": {
+      "mean": 0.155,
+      "std": 0.142,
+      "min": 0.0,
+      "q25": 0.093,
+      "median": 0.136,
+      "q75": 0.18,
+      "max": 1.0,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    },
+    "historical_previous_failures": {
+      "mean": 1.417,
+      "std": 1.256,
+      "min": 0.0,
+      "q25": 0.75,
+      "median": 1.0,
+      "q75": 2.0,
+      "max": 6.0,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    },
+    "historical_outage_history": {
+      "mean": 13.105,
+      "std": 13.133,
+      "min": 0.0,
+      "q25": 2.468,
+      "median": 9.565,
+      "q75": 21.35,
+      "max": 66.64,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    },
+    "historical_maintenance_count": {
+      "mean": 4.967,
+      "std": 3.271,
+      "min": 1.0,
+      "q25": 3.0,
+      "median": 4.0,
+      "q75": 6.25,
+      "max": 17.0,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    },
+    "historical_days_since_maintenance": {
+      "mean": 31.445,
+      "std": 41.916,
+      "min": 0.2,
+      "q25": 2.0,
+      "median": 3.4,
+      "q75": 65.1,
+      "max": 204.5,
+      "missing_count": 0,
+      "missing_pct": 0.0
+    }
+  }
+}

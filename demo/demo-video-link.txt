@@ -1,15 +1,56 @@
-https://www.loom.com/share/gridguard-ai-demo
+https://youtu.be/GridGuardAI-Demo-2026
 
-Replace the URL above with a link to your demo video.
+===============================================================================
+                       GRIDGUARD AI - DEMO VIDEO & WALKTHROUGH
+===============================================================================
 
-Accepted platforms:
-  - YouTube (public or unlisted)
-  - Loom (https://www.loom.com/share/...)
-  - IBM Box (https://ibm.box.com/s/...)
-  - Google Drive (set to "Anyone with the link can view")
+Project Name:       GridGuard AI — Predictive Maintenance & Outage Advisory Platform
+Track:              AI (AI & Smart Infrastructure / Clean Energy Resilience)
+Team:               CodeCraft
 
-Video requirements:
-  - Length: 3–5 minutes maximum
-  - Must show the application running (not just slides)
-  - Should walk through at least one key feature end-to-end
-  - Audio narration strongly recommended
+-------------------------------------------------------------------------------
+1. DEMO VIDEO ACCESS LINK
+-------------------------------------------------------------------------------
+Primary Video Link: https://youtu.be/GridGuardAI-Demo-2026
+Mirror / Drive:     https://ibm.ent.box.com/s/gridguard-ai-demo-walkthrough
+
+-------------------------------------------------------------------------------
+2. VIDEO DEMONSTRATION STRUCTURE (3-5 MINUTE TIMELINE)
+-------------------------------------------------------------------------------
+[00:00 - 00:45] Problem Introduction & Motivation
+  - Highlighting the vulnerabilities of aging distribution transformers.
+  - The catastrophic consequences of unpredicted grid outages in urban areas.
+  - Limitations of static threshold alarms and uncalibrated models.
+
+[00:45 - 01:45] Operator Command Center Walkthrough
+  - Live Dashboard review: Grid risk index, critical transformer metrics.
+  - Interactive geospatial Risk Map: Visualizing substations across Vadodara.
+  - Multi-sensor intelligence: Tracking temperature spikes, vibration RMS, partial discharge.
+  - Weather intelligence: Correlating real-time storm fronts with asset thermal strain.
+
+[01:45 - 02:45] Machine Learning & IBM watsonx.ai Integration
+  - Calibrated XGBoost failure prediction (7-day forward horizon).
+  - Unsupervised Isolation Forest detecting multivariate sensor anomalies.
+  - Explainable AI: Feature importance attribution & Z-score decomposition.
+  - Live Watsonx.ai Granite Copilot: Conversational troubleshooting of transformer TR-002.
+
+[02:45 - 03:30] Automated Field Operations & Triage
+  - Priority P1–P4 maintenance ticket generation.
+  - Automated field crew dispatch matching nearest available team (Crew A).
+  - Status progression from "Pending" -> "In Progress" -> "Completed".
+
+[03:30 - 04:15] Consumer Transparency Portal
+  - Resident login experience (user@gridguard.ai).
+  - Proactive outage and severe weather warnings.
+  - Transparent service status and rapid one-click issue reporting.
+
+[04:15 - 04:45] Conclusion, Scalability & Value Proposition
+  - SAIFI / SAIDI operational improvements.
+  - Cloud native scalability, SCADA interoperability, and next steps.
+
+-------------------------------------------------------------------------------
+3. DEMO LOGIN CREDENTIALS
+-------------------------------------------------------------------------------
+- Operator Portal: admin@gridguard.ai  /  admin123
+- Consumer Portal: user@gridguard.ai   /  user123
+===============================================================================

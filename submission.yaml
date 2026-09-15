@@ -13,7 +13,7 @@ team:
   track: "AI"                          # REQUIRED — one of: AI | DevOps | Sustainability | Open
   lead:
     name: "Parth Yadav"                # REQUIRED — e.g., "Alice Chen"
-    email: "parth.yadav@codecraft.ai"  # REQUIRED — e.g., "alice.chen@ibm.com"
+    email: "parthyadav2206@gmail.com"  # REQUIRED — e.g., "alice.chen@ibm.com"
   members:
     - name: "Mahi Vachhani"            # REQUIRED — Team member 1
       email: ""
@@ -26,34 +26,37 @@ submission:
   title: "GridGuard AI"                # REQUIRED — Project display name, e.g., "SmartOps Dashboard"
 
   problem_statement: >                 # REQUIRED — 1-3 sentences. What problem? Who has it?
-    Replace this text with a concise description of the real-world problem
-    your project addresses and who experiences it.
+    Electric power distribution utilities face frequent, unpredicted transformer and substation equipment 
+    failures due to aging assets, environmental extremes, and fragmented SCADA telemetry. Traditional calendar-based 
+    maintenance leads to expensive reactive repairs, prolonged consumer blackouts, and control room alert fatigue.
 
   solution_summary: >                  # REQUIRED — 1-3 sentences. What did you build?
-    Replace this text with a clear description of your solution
-    and how it addresses the problem above.
+    GridGuard AI is an intelligent predictive maintenance and grid resilience decision-support platform. 
+    It combines calibrated XGBoost failure probability forecasting, unsupervised Isolation Forest multi-sensor 
+    anomaly detection, and IBM watsonx.ai Granite 13B LLM grounding with a dual-persona web portal for operators and citizens.
 
   key_features:                        # REQUIRED — List 3 to 5 specific features you implemented
-    - ""                               # e.g., "Real-time pipeline anomaly detection using watsonx.ai"
-    - ""
-    - ""
-    - ""                               # optional 4th
-    - ""                               # optional 5th
+    - "Calibrated 7-day equipment failure probability prediction using XGBoost with Platt sigmoid calibration (FR-08)"
+    - "Multivariate Isolation Forest anomaly detection decomposing thermal, vibration RMS, partial discharge, and oil decay"
+    - "Multi-factor composite risk scoring (FR-10 formula) classifying assets into Low, Medium, High, and Critical risk tiers"
+    - "IBM watsonx.ai Granite 13B conversational copilot grounded in verified real-time telemetry payloads (FR-17, FR-18)"
+    - "Dual-persona responsive web application providing an Operator Command Center and Consumer Transparency Hub"
 
   tech_stack:
-    languages: []                      # REQUIRED — e.g., ["Python", "TypeScript"]
-    frameworks: []                     # e.g., ["FastAPI", "React"]
-    ibm_technologies: []               # e.g., ["watsonx.ai", "IBM Bob", "IBM Cloud Functions"]
-    databases: []                      # e.g., ["PostgreSQL", "Redis"]
-    other: []                          # e.g., ["Docker", "GitHub Actions", "Slack API"]
+    languages: ["Python", "JavaScript", "SQL"]
+    frameworks: ["Django 6.1", "Django REST Framework", "React 18", "Vite 8.3", "Tailwind CSS"]
+    ibm_technologies: ["watsonx.ai", "IBM Granite 13B Chat v2", "IBM Cloud Machine Learning"]
+    databases: ["SQLite3 (Dev)", "PostgreSQL (Prod Ready)"]
+    other: ["XGBoost", "scikit-learn", "Joblib", "Recharts", "Lucide React", "python-pptx", "OpenWeather API"]
 
   what_we_are_most_proud_of: >         # Optional but recommended — guides judges to your best work
-    Replace with what aspect of the submission you consider strongest
-    and want judges to pay special attention to.
+    We are most proud of our mathematically rigorous, leakage-free feature engineering and ML calibration pipeline. 
+    Rather than generating ungrounded AI summaries, our system strictly feeds physical sensor deviations and 
+    calibrated probabilities into IBM watsonx.ai, guaranteeing zero hallucinations and providing explainable operational advice.
 
   known_limitations: >                 # Optional but recommended — be honest about gaps
-    Replace with any known limitations, incomplete features,
-    or shortcuts taken due to time constraints.
+    Live telemetry currently utilizes realistic IEEE-standard synthetic feeds and OpenWeather API data; direct industrial 
+    SCADA MQTT / IEC 61850 protocol edge adapters are architected for Phase 1 deployment.
 
 # =============================================================================
 # ARTIFACT LOCATIONS

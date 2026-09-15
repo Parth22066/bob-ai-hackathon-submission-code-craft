@@ -1,47 +1,12 @@
-# Source Code
+# GridGuard AI — Source Code Directory
 
-Place all your project's source code in this folder.
+This directory contains the complete source code for GridGuard AI, organized into three decoupled subsystems:
 
-## Structure Guidelines
+- **`backend/`**: Django 6.1 REST API gateway, database ORM models (`Asset`, `TelemetryLog`, `MaintenanceLog`), live OpenWeather client, and IBM watsonx.ai foundation model connector.
+- **`frontend/`**: React 18 + Vite modern single-page application with Tailwind CSS, Recharts time-series telemetry charts, and dual-persona interfaces (Control Center & Citizen Portal).
+- **`prediction_model/`**: Machine learning subsystem featuring calibrated XGBoost failure prediction, multivariate Isolation Forest anomaly detection, 35+ point-in-time engineered features, and model registry artifacts.
 
-Organize your code logically. Here are common patterns — use whatever fits
-your project:
-
-### Web Application
-```
-src/
-  backend/        ← API server code
-  frontend/       ← UI code
-  shared/         ← Shared utilities/types
-```
-
-### Data / AI Project
-```
-src/
-  data/           ← Data ingestion / preprocessing
-  models/         ← ML model code
-  api/            ← Serving layer
-  notebooks/      ← Jupyter notebooks (exploration)
-```
-
-### CLI / Script-based Tool
-```
-src/
-  cli/            ← CLI entry points
-  lib/            ← Core logic
-  utils/          ← Helpers
-```
-
-## Important Files to Include
-
-- `requirements.txt` or `package.json` — dependency manifest
-- `.env.example` — template for environment variables (NEVER commit `.env`)
-- Any database migration files
-- Configuration files
-
-## What NOT to Include in src/
-
-- `.env` files with real secrets
-- Large binary files (use Git LFS or link externally)
-- `node_modules/` or `venv/` (these are in `.gitignore`)
-- Build artifacts (`dist/`, `build/`, `__pycache__/`)
+## Running the Source Code
+From the repository root:
+- Run `start.bat` for one-click startup.
+- See `docs/setup-guide.md` for manual execution instructions.

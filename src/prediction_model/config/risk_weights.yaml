@@ -1,0 +1,14 @@
+weights:
+  failure_probability: 0.35
+  anomaly_severity: 0.20
+  weather_risk: 0.15
+  historical_incidents: 0.15
+  asset_criticality: 0.15
+
+thresholds:
+  low: 35.0
+  medium: 65.0
+  high: 85.0
+  critical: 100.0
+
+operational_decision_threshold: 0.40

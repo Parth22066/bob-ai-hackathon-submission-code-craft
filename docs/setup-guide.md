@@ -1,79 +1,159 @@
-# Setup Guide
+# Setup & Deployment Guide: GridGuard AI
 
-> **This file is read by the automated evaluation pipeline. Be precise and complete.**
+This document provides complete instructions for setting up, running, testing, and verifying the **GridGuard AI** platform on local development environments and cloud workstations.
 
-## Prerequisites
+---
 
-Before you begin, ensure you have the following installed:
+## 1. System Prerequisites
 
-- [ ] [e.g., Python 3.11+]
-- [ ] [e.g., Node.js 18+]
-- [ ] [e.g., Docker Desktop]
-- [ ] [e.g., An IBM Cloud account with watsonx.ai access]
+Before starting, ensure the following runtimes are installed on your workstation:
+- **Operating System:** Windows 10/11, macOS, or Linux
+- **Python:** Python 3.12 or 3.14 (64-bit)
+- **Node.js:** Node.js v18.0.0 or later (v24 LTS recommended)
+- **Package Manager:** npm (v9+) or pnpm / yarn
 
-## Environment Variables
+---
 
-Copy `.env.example` to `.env` and fill in the values:
+## 2. Quick Start: One-Click Windows Automation
 
-```bash
-cp .env.example .env
+For Windows environments, automated batch scripts manage the entire runtime:
+
+### Starting All Services
+Simply double-click `start.bat` in the repository root (or run from PowerShell / Command Prompt):
+```cmd
+start.bat
+```
+*What `start.bat` does automatically:*
+1. Detects and activates the root Python virtual environment (`venv/`).
+2. Verifies Node.js and npm availability.
+3. Applies any pending Django database migrations (`python manage.py migrate`).
+4. Launches the Django REST backend server in a dedicated window on `http://localhost:8000`.
+5. Launches the React Vite frontend in a dedicated window on `http://localhost:5173`.
+6. Opens `http://localhost:5173` in your default web browser.
+
+### Stopping All Services
+To cleanly terminate both servers and free ports 8000 and 5173:
+```cmd
+stop.bat
 ```
 
-| Variable | Description | Required |
-|---|---|---|
-| `WATSONX_API_KEY` | Your IBM watsonx.ai API key | Yes |
-| `WATSONX_PROJECT_ID` | Your watsonx.ai project ID | Yes |
-| `DATABASE_URL` | PostgreSQL connection string | Yes |
-| `SLACK_WEBHOOK_URL` | Slack webhook for alerts | No |
+---
 
-## Installation
+## 3. Manual Step-by-Step Setup
 
+If you prefer launching services manually or are running on macOS/Linux:
+
+### Step A: Python Virtual Environment Setup
 ```bash
-# 1. Clone the repository
-git clone https://github.com/[your-org]/[your-repo].git
-cd [your-repo]
+# In repository root
+python -m venv venv
 
-# 2. Install backend dependencies
-[your command — e.g.: pip install -r requirements.txt]
+# Activate on Windows:
+.\venv\Scripts\activate
 
-# 3. Install frontend dependencies (if applicable)
-[your command — e.g.: cd frontend && npm install]
+# Activate on macOS/Linux:
+source venv/bin/activate
 
-# 4. Set up the database (if applicable)
-[your command — e.g.: python manage.py migrate]
+# Install dependencies:
+pip install -r src/prediction_model/requirements.txt
+pip install django django-cors-headers djangorestframework requests ibm_watsonx_ai python-pptx pytest
 ```
 
-## Running the Application
-
+### Step B: Backend Initialization
 ```bash
-# Start the backend
-[your command — e.g.: uvicorn app.main:app --reload]
+cd src/backend
 
-# Start the frontend (in a separate terminal, if applicable)
-[your command — e.g.: cd frontend && npm run dev]
+# Verify Django configuration
+python manage.py check
+
+# Run migrations
+python manage.py migrate
+
+# Start backend server
+python manage.py runserver 0.0.0.0:8000
+```
+The backend API is now accessible at `http://localhost:8000/api/`.
+
+### Step C: Frontend Initialization
+```bash
+cd src/frontend
+
+# Install dependencies (if first time)
+npm install
+
+# Run Vite dev server
+npm run dev
+```
+The frontend portal is now accessible at `http://localhost:5173`.
+
+---
+
+## 4. Default Demo Accounts
+
+GridGuard AI comes pre-configured with two demo role personas for presentation and testing:
+
+| Role | Email | Password | Access / Portal |
+|---|---|---|---|
+| **Grid Operations Administrator** | `admin@gridguard.ai` | `admin123` | Full control center: Dashboard, Risk Analysis, Sensors, Weather, Maintenance, Crew, AI Assistant |
+| **Consumer / Resident** | `user@gridguard.ai` | `user123` | Consumer transparency hub: Live service status, localized outage alerts, issue reporting, customer AI |
+
+---
+
+## 5. Verification & Automated Test Suites
+
+### A. Machine Learning Tests (`pytest`)
+To run unit and integration tests across feature extractors, cross-validation splitters, and model inference:
+```bash
+cd src/prediction_model
+python -m pytest tests/ -v
 ```
 
-The application will be available at: `http://localhost:[PORT]`
-
-## Running Tests
-
+### B. Live Inference Validation
+To verify end-to-end model scoring on an arbitrary asset:
 ```bash
-[your test command — e.g.: pytest tests/ -v]
+cd src/prediction_model
+python scripts/predict.py --asset-id EQ-001
 ```
 
-## Quick Demo (Optional)
-
-If you have a demo script or sample data to showcase the project quickly:
-
+### C. Backend Django Health Check
 ```bash
-[e.g.: python demo/seed_demo_data.py]
-[e.g.: open http://localhost:8000/demo]
+cd src/backend
+python manage.py check
 ```
 
-## Troubleshooting
+### D. Frontend Production Build Check
+```bash
+cd src/frontend
+npm run build
+```
 
-| Issue | Solution |
-|---|---|
-| [e.g., `ModuleNotFoundError`] | [e.g., Run `pip install -r requirements.txt` again] |
-| [e.g., Database connection refused] | [e.g., Ensure PostgreSQL is running: `docker compose up db`] |
-| [e.g., watsonx.ai 401 error] | [e.g., Check `WATSONX_API_KEY` in your `.env` file] |
+---
+
+## 6. External Service Configurations (Optional)
+
+GridGuard AI features self-contained offline mock and fallback capabilities. To enable live external cloud services:
+
+### A. IBM watsonx.ai Foundation Models
+In `src/backend/gridguard/settings.py` (or via environment variables):
+```python
+IBM_WATSONX_APIKEY = "YOUR_IBM_CLOUD_API_KEY"
+IBM_WATSONX_PROJECT_ID = "YOUR_WATSONX_PROJECT_ID"
+IBM_WATSONX_URL = "https://us-south.ml.cloud.ibm.com"
+```
+
+### B. OpenWeather Real-Time Weather
+In `src/backend/gridguard/settings.py`:
+```python
+OPENWEATHER_API_KEY = "YOUR_OPENWEATHER_API_KEY"
+```
+
+---
+
+## 7. Troubleshooting
+
+- **Port 8000 or 5173 already in use:**
+  Run `stop.bat` to terminate any hanging background processes, or manually inspect with `netstat -ano | findstr :8000`.
+- **CORS Issues:**
+  Ensure `django-cors-headers` is listed in `INSTALLED_APPS` and `corsheaders.middleware.CorsMiddleware` is at the very top of `MIDDLEWARE` in `settings.py`.
+- **ModuleNotFoundError: No module named 'yaml':**
+  Ensure you are using `venv\Scripts\python.exe` which has `pyyaml` installed.
